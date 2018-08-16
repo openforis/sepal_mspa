@@ -166,15 +166,18 @@ shinyServer(function(input, output, session) {
                                req(input$StartButton)
                                
                                time_start  <- Sys.time()
-                               data_dir <- data_dir()
+                               data_dir    <- data_dir()
+                               file_path   <- file_path()
+                               
                                file.copy("www/scripts/MSPA/",
                                          data_dir,
                                          recursive = T,
                                          overwrite = T)
                                
+                               dir.create(paste0(data_dir,"MSPA/input/"),showWarnings = F)
+                               dir.create(paste0(data_dir,"MSPA/output/"),showWarnings = F)
+                               dir.create(paste0(data_dir,"MSPA/tmp/"),showWarnings = F)
                                
-                               file_path            <- file_path()
-                               print(file_path)
                                file.copy(file_path,paste0(data_dir,"MSPA/input/input.tif"))
                                
                                parameters <- parameters()

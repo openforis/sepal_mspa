@@ -36,6 +36,6 @@ packages(leaflet)
 packages(RColorBrewer)
 
 ## Packages for BFAST
-packages(bfastSpatial)
-packages(parallel)
+#packages(bfastSpatial)
+#packages(parallel)
 #packages(ncdf4)
