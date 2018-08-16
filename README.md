@@ -1,10 +1,20 @@
-#### BFAST-analysis spatial wrapper
+#### MSPA-analysis wrapper
 
-The Breaks for Additive Seasonal and Trend (BFAST) method enables to analyze the dynamics of satellite dense time series and overcome the major challenge to distinguish land-cover change from seasonal phenological variations. 
+#############################################################
+# Purpose: 
+#   run MSPA for the user-selected forest mask in SEPAL
+#   Based on the original version available in GuidosToolbox
 
-Verbesselt et al. (2010), Dutrieux et al. (2015) and DeVries et al. (2015) used this approach to demonstrate that time series can be decomposed into trend, seasonal, and remainder components and that the time and number of changes can be detected at high temporal resolution (i.e., 16 days), enabling detection of tree cover change and separation from the phenology signal.
+############################################################## 
+# rstudio-Shiny wrapper of a custom script for FAO-FRA, SEPAL ( Ubuntu 16.04.3 LTS )
+# more info at:
+#  - http://forest.jrc.ec.europa.eu/download/software/guidos/mspa/
 
-The same authors developed the bfastSpatial package (REFERENCE) which provides utilities to perform change detection analysis on time-series of spatial gridded data, such as the Landsat satellite imagery that cover our period of interest.
+# Adapted from: Peter Vogt <peter.vogt@ec.europa.eu>
 
-The package has been tested in the early versions of the cloud based platform developed by FAO for parallel processing of remote sensing data (https://sepal.io). It has been recently adapted into a functional processing chain (https://github.com/yfinegold/runBFAST/) which is wrapped in the current Shiny application.
-# bfast_shiny
+
+#############################################################
+# Processing steps:
+# 1) test MSPA-compatibility of input image
+# 2) process for MSPA
+# 3) post-process (add back geoheader, amend to final file name, dostats)
