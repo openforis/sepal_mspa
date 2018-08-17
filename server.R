@@ -185,7 +185,14 @@ shinyServer(function(input, output, session) {
                                the_dir <- getwd()
                                
                                setwd(paste0(data_dir,"MSPA"))
-                               system("bash sepal_mspa")
+                               system("chmod 755 mspa_lin64")
+                               print("have a break")
+                               withProgress(message = paste0('Processing MSPA for ', file_path),
+                                            value = 0,
+                                            {
+                                              system("bash sepal_mspa")
+                                            })
+                               
                                setwd(the_dir)
                                
                                process_time <- Sys.time() - time_start
@@ -201,7 +208,8 @@ shinyServer(function(input, output, session) {
   output$display_res <- renderPlot({
     req(mspa_res())
     print('Check: Display the map')
-    plot(mspa_res(), axes = FALSE)
+    mspa_res <- raster(paste0(data_dir(),"MSPA/output/input_",outname(),".tif"))
+    plot(mspa_res, axes = FALSE)
   })
   
   ##################################################################################################################################
