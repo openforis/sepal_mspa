@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #******************************************************************************
 #  $Id$
 #
@@ -35,8 +35,8 @@
 
 import sys
 
-from osgeo import gdal
-
+#from osgeo import gdal
+import gdal
 if len(sys.argv) < 3:
     print("Usage: gdalcopyproj.py source_file dest_file")
     sys.exit(1)

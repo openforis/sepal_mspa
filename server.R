@@ -202,11 +202,17 @@ shinyServer(function(input, output, session) {
                                raster(paste0(data_dir,"MSPA/output/input_",outname(),".tif"))
                              })
   
+  ############### Display Button
+  output$display_button <- renderUI({
+    req(mspa_res())
+    actionButton('display_button',"Display results as map")
+  })
 
   
   ############### Display the results as map
   output$display_res <- renderPlot({
     req(mspa_res())
+    req(input$display_button)
     print('Check: Display the map')
     mspa_res <- raster(paste0(data_dir(),"MSPA/output/input_",outname(),".tif"))
     plot(mspa_res, axes = FALSE)
