@@ -13,6 +13,7 @@ packages(raster)
 packages(rgeos)
 packages(rgdal)
 packages(Formula)
+packages(gdalUtils)
 
 ## Packages for Shiny 
 packages(shiny)

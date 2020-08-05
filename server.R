@@ -471,7 +471,7 @@ shinyServer(function(input, output, session) {
     
     #time <- readLines(paste0(tmp_dir,"/output/mspa-process.txt"))
     
-    #if(file.exists(mspa_stat_name())){
+    if(file.exists(mspa_stat_name())){
       
       res  <- readLines(mspa_stat_name())
       
@@ -489,7 +489,7 @@ shinyServer(function(input, output, session) {
       names(out) <- c("Class","Proportion")
       
       out
-    #}else{NULL}
+    }else{NULL}
       
   })
   

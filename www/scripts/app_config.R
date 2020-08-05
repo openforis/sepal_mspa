@@ -8,6 +8,7 @@ dir.create(tmp_dir,recursive=T,showWarnings = F)
 
 dir.create(paste0(tmp_dir,"input/"), showWarnings = F)
 dir.create(paste0(tmp_dir,"output/"),showWarnings = F)
+dir.create(paste0(tmp_dir,"tmp/"),showWarnings = F)
 
 ####################################################################################################
 ################# PIXEL COUNT FUNCTION
