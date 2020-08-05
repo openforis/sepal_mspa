@@ -26,8 +26,7 @@ options(stringsAsFactors=FALSE)
 options(shiny.launch.browser=T)
 
 source("www/scripts/load_packages.R",echo = TRUE)
-
-
+source("www/scripts/app_config.R",echo = TRUE)
 
 ####################################################################################
 ####### Start User Interface
@@ -93,8 +92,7 @@ shinyUI(
                   #New box
                   box(
                     title= textOutput('title_download_testdata'), width=4,status = "success", solidHeader= TRUE,
-                    actionButton("download_test_button",
-                                 textOutput('download_testdata_button')),
+                    actionButton("download_test_button",textOutput('download_testdata_button')),
                     uiOutput("dynUI_download_test")
                   )
                   
@@ -110,11 +108,25 @@ shinyUI(
                       htmlOutput('body_ts_dir'),
                       br(),
                       shinyFilesButton(id = 'input_file',
-                                       label = "Binary Foreground/Background mask",  
+                                       label = "Input map",  
                                        title = "Browse",
                                        multiple=F),
-                      textOutput("parameterSummary")
+                      
+                      textOutput("file_path_text"),
+                      
+                      uiOutput("ValidateInputButton"),
+                      
+                      #tableOutput('mapAreaTable'),
+                      
+                      htmlOutput("selectUI_forest"),
+                      htmlOutput("selectUI_noforest")
+                      
+                      #htmlOutput("selectUI_nodata"),
+                      #uiOutput("ValidateCodesButton"),
+                      #tableOutput('reclass_table')
                   ),
+                  
+                  
                   
                   ####################################################################################
                   # New box
@@ -149,7 +161,9 @@ shinyUI(
                                   choices = c(0,1),
                                   multiple = FALSE,
                                   selected = 1
-                      )
+                      ),
+                      
+                      textOutput("parameterSummary")
                        
                   )
                   
@@ -161,10 +175,11 @@ shinyUI(
                   ####################################################################################
                   # New box
                   box(title=textOutput('title_result'),width=12,status = "success", solidHeader= TRUE,
-                      uiOutput("StartButton"),
-                      #dataTableOutput("show_table"),
+                      uiOutput("mspaStartButton"),
                       plotOutput("display_res"),
-                      textOutput("message")
+                      tableOutput("mspa_summary"),
+                      uiOutput("ui_download_mspa"),
+                      uiOutput("ui_download_mspa_stat")
                   )
                   ####################################################################################
                   # End of the Box

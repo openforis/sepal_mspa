@@ -15,9 +15,13 @@ output$source_code <- reactive({  "Source code" })
 output$bug_reports <- reactive({  "Bug reports" })
 
 ############################ BUTTONS
-output$download_testdata_button <- reactive({"Download test dataset"})
-output$start_button             <- reactive({'Launch MSPA calculation'})
+output$download_testdata_button    <- reactive({"Download test dataset"})
+output$download_mspa_button        <- reactive({'Download as GeoTiff data (.tif)'})
+output$download_mspa_stat_button   <- reactive({'Download as tabular data (.txt)'})
 
+output$mspa_start_button             <- reactive({'Launch MSPA calculation'})
+output$validate_input_button    <- reactive({'Validate input'})
+output$validate_codes_button    <- reactive({'Validate codes'})
 
 #################################################################################### 
 ############################ INTRODUCTION TAB
