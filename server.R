@@ -122,7 +122,7 @@ shinyServer(function(input, output, session) {
     
     selectInput(
       "cat_forest",
-      label = "Forest codes",
+      label = "Foreground codes",
       choices = categories,
       multiple = TRUE
     )
@@ -143,7 +143,7 @@ shinyServer(function(input, output, session) {
     
     selectInput(
       "cat_nofor",
-      label = "Non Forest codes",
+      label = "Background codes",
       choices = categories,
       multiple = TRUE
     )

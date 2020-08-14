@@ -35,7 +35,8 @@ output$title_description <- reactive({"Description"})
 
 output$body_description  <- reactive({
   HTML(paste0(
-    "Perform a MSPA analysis on a binary mask. Values of the mask are:
+    "Converts the input into a binary mask and performs MSPA analysis on the binary mask. <br/>
+    Values of the mask are:
     <br/>
     - Foreground value 2<br/>
     - Background value 1<br/>
