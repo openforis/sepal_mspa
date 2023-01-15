@@ -1,5 +1,8 @@
 #### MSPA-analysis wrapper
 
+> **Note**  
+> :warning: This repository have been archived, the MSPA functionalities are now part of the [GWB app](https://github.com/sepal-contrib/gwb). :warning:
+
 #############################################################
 
 Purpose:  run MSPA for the user-selected forest mask in SEPAL
